@@ -1,7 +1,5 @@
 import type { ReactNode } from "react";
 import Sidebar from "./Sidebar";
-import Container from "./Container";
-
 interface LayoutProps {
   children: ReactNode;
 }
@@ -14,10 +12,7 @@ export default function MainLayout({ children }: LayoutProps) {
       pt-24 md:pt-35 lg:pt-20"
     >
       <Sidebar />
-
-      <main className="lg:ml-[103px]">
-        <Container>{children}</Container>
-      </main>
+      <main className="lg:ml-[103px]">{children}</main>
     </div>
   );
 }
