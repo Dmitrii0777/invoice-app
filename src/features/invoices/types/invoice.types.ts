@@ -1,6 +1,7 @@
 export type InvoiceStatus = "paid" | "pending" | "draft";
 
 export interface InvoiceItem {
+  id: number;
   name: string;
   quantity: number;
   price: number;
