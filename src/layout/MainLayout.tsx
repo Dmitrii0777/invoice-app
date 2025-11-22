@@ -8,11 +8,15 @@ interface LayoutProps {
 
 export default function MainLayout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-[#f8f8fb]">
+    <div
+      className="
+      min-h-screen bg-bg 
+      pt-24 md:pt-35 lg:pt-20"
+    >
       <Sidebar />
 
       <main className="lg:ml-[103px]">
-        <Container className="bg-slate-500">{children}</Container>
+        <Container>{children}</Container>
       </main>
     </div>
   );

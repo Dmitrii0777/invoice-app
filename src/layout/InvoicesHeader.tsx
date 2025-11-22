@@ -1,4 +1,4 @@
-import { ArrowDown } from "../components/ui/ArrowDown";
+import { Arrow } from "../components/ui/Arrow";
 
 export default function InvoicesHeader() {
   return (
@@ -24,18 +24,27 @@ export default function InvoicesHeader() {
           <span className="font-bold mr-3 md:mr-4">
             Filter <span className="hidden md:inline">by status</span>
           </span>
-          <ArrowDown />
+          <Arrow open={false} />
         </button>
 
-        <button className="btn-primary flex items-center  gap-4">
-          <div
-            className="w-8 h-8 bg-white rounded-full
-            relative before:content-[''] before:absolute before:left-1/2 before:top-1/2
-            before:w-3 before:h-[2px] before:bg-[#7C5DFA] before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90
-            after:content-[''] after:absolute after:left-1/2 after:top-1/2
-            after:w-3 after:h-[2px] after:bg-[#7C5DFA] after:-translate-x-1/2 after:-translate-y-1/2 after:-rotate-180
+        <button
+          className="
+          flex items-center gap-4
+          px-4 py-3 rounded-3xl md:px-5 md:py-4
+          font-bold bg-primary text-white
           "
-          ></div>
+        >
+          <span
+            className="
+            w-8 h-8 bg-white rounded-full relative 
+            before:content-[''] before:absolute before:left-1/2 before:top-1/2
+            before:w-3 before:h-[2px] before:bg-[#7C5DFA] 
+            before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90
+            after:content-[''] after:absolute after:left-1/2 after:top-1/2
+            after:w-3 after:h-[2px] after:bg-[#7C5DFA] 
+            after:-translate-x-1/2 after:-translate-y-1/2 after:-rotate-180
+          "
+          ></span>
           <span>
             New<span className="hidden md:inline"> Invoice</span>
           </span>

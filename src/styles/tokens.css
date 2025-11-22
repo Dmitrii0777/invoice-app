@@ -1,0 +1,23 @@
+:root {
+  /* background */
+  --color-bg: #f8f8fb;
+  --color-bg-alt: #ffffff;
+
+  /* text */
+  --color-text: #0c0e16;
+  --color-text-secondary: #888eb0;
+
+  /* accent / primary */
+  --color-primary: #7c5dfa;
+  --color-accent: #ec5757;
+}
+
+.theme-dark {
+  /* background */
+  --color-bg: #141625;
+  --color-bg-alt: #1e2139;
+
+  /* text */
+  --color-text: #ffffff;
+  --color-text-secondary: #dfe3fa;
+}
