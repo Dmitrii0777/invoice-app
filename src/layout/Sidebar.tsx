@@ -1,3 +1,8 @@
+import Button from "../components/ui/button/Button";
+import SunIcon from "../components/ui/button/SunIcon";
+import Logo from "../components/ui/logo/Logo";
+import MoonIcon from "../components/ui/MoonIcon";
+
 export default function Sidebar() {
   return (
     <aside
@@ -12,22 +17,17 @@ export default function Sidebar() {
         md:h-[80px] h-[72px] lg:h-full 
         lg:flex-col"
       >
-        <div
-          className="
-          w-[72px] h-[72px] 
-          md:w-[80px] md:h-[80px] 
-          lg:w-[103px] lg:h-[103px] 
-          bg-purple-600 rounded-r-[20px]"
-        ></div>
-
+        <Logo />
         <div
           className="
           flex items-center gap-6 
           h-full lg:w-full lg:h-auto 
           lg:flex-col lg:mt-auto"
         >
-          <button className="text-gray-400 hover:text-white">Click</button>
-
+          <Button className="px-0 md:px-5">
+            <SunIcon className="w-6 h-6 text-yellow-400 hidden" />
+            <MoonIcon className="md:h-6 md:w-6" />
+          </Button>
           <div
             className="
             h-full w-px
@@ -35,10 +35,13 @@ export default function Sidebar() {
             bg-[#494E6E]"
           />
           <div
-            className="
-            w-10 h-10 rounded-full 
+            className=" 
+              h-7 w-7 lg:h-10 lg:w-10
+              rounded-full overflow-hidden
             bg-gray-600 lg:mb-6 lg:mr-0 mr-6"
-          ></div>
+          >
+            <img className="" src="src/assets/images/avatar.jpg" alt="avatar" />
+          </div>
         </div>
       </div>
     </aside>

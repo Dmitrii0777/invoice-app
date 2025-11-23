@@ -12,6 +12,10 @@ export default {
         accent: "var(--color-accent)",
         bgDropdown: "var(--color-bg-dropdown)",
         txDrop: "var(--color-text-dropdown)",
+        "logo-purple": "var(--color-bg-logo-purple)",
+
+        /* Hover */
+        "hover-purple": "var(--color-hover-purple)",
       },
     },
   },

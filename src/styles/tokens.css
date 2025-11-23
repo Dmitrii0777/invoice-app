@@ -3,6 +3,7 @@
   --color-bg: #f8f8fb;
   --color-bg-alt: #ffffff;
   --color-bg-dropdown: #ffffff;
+  --color-bg-logo-purple: #9277ff;
 
   /* text */
   --color-text: #0c0e16;
@@ -12,6 +13,9 @@
   /* accent / primary */
   --color-primary: #7c5dfa;
   --color-accent: #ec5757;
+
+  /* hover */
+  --color-hover-purple: #9277ff;
 }
 
 .theme-dark {
