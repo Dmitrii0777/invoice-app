@@ -1,11 +1,10 @@
 import { mockInvoices } from "../lib/utils/mockData";
 import { useState } from "react";
-import { Container } from "../../../layout";
+import { Container, Header } from "../../../layout";
 
 import type { Invoice } from "../types/invoice.types";
 import type { InvoiceFilterStatus } from "../types/invoice.types";
 
-import Header from "../../../layout/Header";
 import InvoiceList from "../components/InvoiceList";
 
 export default function InvoicesRoute() {

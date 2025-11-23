@@ -6,16 +6,29 @@ export default {
       colors: {
         bg: "var(--color-bg)",
         bgAlt: "var(--color-bg-alt)",
+
+        // Text
         text: "var(--color-text)",
         textSecondary: "var(--color-text-secondary)",
-        primary: "var(--color-primary)",
-        accent: "var(--color-accent)",
+        "text-gray": "var(--color-text-gray-blue)",
+
+        // Buttons
+        primary: "var(--color-btn-primary)",
+        danger: "var(--color-btn-danger)",
+        accent: "var(--accent-btn-bg)",
+
+        // btn text
+        "text-accent": "var(--accent-btn-text)",
+
         bgDropdown: "var(--color-bg-dropdown)",
         txDrop: "var(--color-text-dropdown)",
         "logo-purple": "var(--color-bg-logo-purple)",
 
         /* Hover */
         "hover-purple": "var(--color-hover-purple)",
+      },
+      screens: {
+        xs: "480px",
       },
     },
   },

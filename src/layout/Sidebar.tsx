@@ -1,7 +1,9 @@
 import Button from "../components/ui/button/Button";
-import SunIcon from "../components/ui/button/SunIcon";
+import SunIcon from "../components/ui/SunIcon";
 import Logo from "../components/ui/logo/Logo";
 import MoonIcon from "../components/ui/MoonIcon";
+
+import avatar from "../assets/images/avatar.jpg";
 
 export default function Sidebar() {
   return (
@@ -40,7 +42,7 @@ export default function Sidebar() {
               rounded-full overflow-hidden
             bg-gray-600 lg:mb-6 lg:mr-0 mr-6"
           >
-            <img className="" src="src/assets/images/avatar.jpg" alt="avatar" />
+            <img className="" src={avatar} alt="avatar" />
           </div>
         </div>
       </div>
