@@ -1,4 +1,5 @@
 import { Arrow } from "../components/ui/Arrow";
+import Button from "../components/ui/button/Button";
 import InvoiceFilters from "../features/invoices/components/filters/InvoiceFilters";
 import type { InvoiceFilterStatus } from "../features/invoices/types/invoice.types";
 
@@ -42,12 +43,10 @@ export default function InvoicesHeader({
           {isOpen && <InvoiceFilters onChange={onChangeStatus} />}
         </div>
 
-        <button
+        <Button
           className="
-          flex items-center gap-4
-          px-4 py-3 rounded-3xl md:px-5 md:py-4
-          font-bold bg-primary text-white
-          "
+          flex items-center gap-4 text-white"
+          variant="bg-primary"
         >
           <span
             className="
@@ -63,7 +62,7 @@ export default function InvoicesHeader({
           <span>
             New<span className="hidden md:inline"> Invoice</span>
           </span>
-        </button>
+        </Button>
       </div>
     </header>
   );
