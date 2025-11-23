@@ -10,6 +10,8 @@ export default {
         textSecondary: "var(--color-text-secondary)",
         primary: "var(--color-primary)",
         accent: "var(--color-accent)",
+        bgDropdown: "var(--color-bg-dropdown)",
+        txDrop: "var(--color-text-dropdown)",
       },
     },
   },

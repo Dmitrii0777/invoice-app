@@ -1,4 +1,5 @@
 export type InvoiceStatus = "paid" | "pending" | "draft";
+export type InvoiceFilterStatus = InvoiceStatus | "all";
 
 export interface InvoiceItem {
   id: number;

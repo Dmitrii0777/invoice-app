@@ -1,10 +1,11 @@
 import type { Invoice } from "../types/invoice.types";
-import { mockInvoices } from "../lib/utils/mockData";
 import InvoiceCard from "./InvoiceCard";
 
-function InvoiceList() {
-  const invoices: Invoice[] = mockInvoices;
+type InvoiceListProps = {
+  invoices: Invoice[];
+};
 
+function InvoiceList({ invoices }: InvoiceListProps) {
   return (
     <ul>
       {invoices.length > 0 &&

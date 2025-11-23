@@ -2,10 +2,12 @@
   /* background */
   --color-bg: #f8f8fb;
   --color-bg-alt: #ffffff;
+  --color-bg-dropdown: #ffffff;
 
   /* text */
   --color-text: #0c0e16;
   --color-text-secondary: #888eb0;
+  --color-text-dropdown: #1e2139;
 
   /* accent / primary */
   --color-primary: #7c5dfa;
@@ -16,8 +18,10 @@
   /* background */
   --color-bg: #141625;
   --color-bg-alt: #1e2139;
+  --color-bg-dropdown: #252945;
 
   /* text */
   --color-text: #ffffff;
   --color-text-secondary: #dfe3fa;
+  --color-text-dropdown: #ffffff;
 }

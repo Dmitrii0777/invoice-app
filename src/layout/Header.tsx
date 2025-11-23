@@ -1,6 +1,18 @@
 import { Arrow } from "../components/ui/Arrow";
+import InvoiceFilters from "../features/invoices/components/filters/InvoiceFilters";
+import type { InvoiceFilterStatus } from "../features/invoices/types/invoice.types";
 
-export default function InvoicesHeader() {
+type InvoiceFilterProp = {
+  isOpen: boolean;
+  toggle: () => void;
+  onChangeStatus: (status: InvoiceFilterStatus) => void;
+};
+
+export default function InvoicesHeader({
+  toggle,
+  isOpen,
+  onChangeStatus,
+}: InvoiceFilterProp) {
   return (
     <header className=" flex items-center justify-between">
       <div>
@@ -20,12 +32,15 @@ export default function InvoicesHeader() {
         </p>
       </div>
       <div className="flex items-center gap-5 md:gap-10">
-        <button className="flex items-center">
-          <span className="font-bold mr-3 md:mr-4">
-            Filter <span className="hidden md:inline">by status</span>
-          </span>
-          <Arrow open={false} />
-        </button>
+        <div className="relative">
+          <button className="flex items-center " onClick={toggle}>
+            <span className="font-bold mr-3 md:mr-4">
+              Filter <span className="hidden md:inline">by status</span>
+            </span>
+            <Arrow open={isOpen} />
+          </button>
+          {isOpen && <InvoiceFilters onChange={onChangeStatus} />}
+        </div>
 
         <button
           className="
