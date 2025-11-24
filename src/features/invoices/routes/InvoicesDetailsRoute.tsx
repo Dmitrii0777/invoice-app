@@ -1,5 +1,9 @@
 import { Container } from "../../../layout";
-import { DetailsFooterActions, DetailsHeader } from "../components/details";
+import {
+  DetailsFooterActions,
+  DetailsHeader,
+  DetailsContent,
+} from "../components/details";
 
 const InvoicesDetailsRoute = () => {
   return (
@@ -7,6 +11,7 @@ const InvoicesDetailsRoute = () => {
       <Container>
         <DetailsHeader />
         <DetailsFooterActions />
+        <DetailsContent />
       </Container>
     </>
   );
