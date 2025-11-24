@@ -10,7 +10,7 @@ export default {
         bgTotal: "var(--color-details-tootal-bg)",
 
         // Text
-        text: "var(--color-text)",
+        textBasic: "var(--color-text-basic)",
         textSecondary: "var(--color-text-secondary)",
         "text-gray": "var(--color-text-gray-blue)",
 

@@ -2,19 +2,7 @@ import { StatusBadge } from "../../../../components/common";
 import { Button } from "../../../../components/ui";
 import { buttons } from "./details.actions";
 import { useModal } from "../../../../provider/modal";
-
-const View = () => {
-  return (
-    <div
-      className="
-        flex flex-col items-center justify-center 
-        w-[300px] h-[300px] bg-white"
-    >
-      <h2>Hello My Freand</h2>
-      <p>this is testing Modal</p>
-    </div>
-  );
-};
+import { DeleteInvoiceModal } from "../../../../provider/modal";
 
 const DetailsHeader = () => {
   const { openModal } = useModal();
@@ -33,7 +21,9 @@ const DetailsHeader = () => {
       <div className="hidden md:flex items-center gap-2">
         {buttons.map(({ text, variant, textClass }) => (
           <Button
-            onClick={() => text === "Delete" && openModal(<View />, "center")}
+            onClick={() =>
+              text === "Delete" && openModal(<DeleteInvoiceModal />, "center")
+            }
             key={text}
             variant={variant}
             className={textClass}

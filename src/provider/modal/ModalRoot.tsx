@@ -21,12 +21,10 @@ const ModalRoot = () => {
 
   return createPortal(
     <div
-      className={`fixed inset-0 bg-black/50 flex ${positionClasses} z-50`}
+      className={`fixed p-5 inset-0 bg-black/50 flex ${positionClasses} z-50`}
       onClick={closeModal}
     >
-      <div className="" onClick={(e) => e.stopPropagation()}>
-        {content}
-      </div>
+      <div onClick={(e) => e.stopPropagation()}>{content}</div>
     </div>,
     document.body
   );

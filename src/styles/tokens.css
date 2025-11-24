@@ -8,7 +8,7 @@
   --color-details-tootal-bg: #373b53;
 
   /* text */
-  --color-text: #0c0e16;
+  --color-text-basic: #0c0e16;
   --color-text-secondary: #888eb0;
   --color-text-dropdown: #1e2139;
   --color-text-gray-blue: #7e88c3;
@@ -34,7 +34,7 @@
   --color-details-tootal-bg: #0c0e16;
 
   /* text */
-  --color-text: #ffffff;
+  --color-text-basic: #ffffff;
   --color-text-secondary: #dfe3fa;
   --color-text-dropdown: #ffffff;
   --color-text-gray-blue: #dfe3fa;
