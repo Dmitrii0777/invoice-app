@@ -4,6 +4,8 @@
   --color-bg-alt: #ffffff;
   --color-bg-dropdown: #ffffff;
   --color-bg-logo-purple: #9277ff;
+  --color-bg-table: #f9fafe;
+  --color-details-tootal-bg: #373b53;
 
   /* text */
   --color-text: #0c0e16;
@@ -28,6 +30,8 @@
   --color-bg: #141625;
   --color-bg-alt: #1e2139;
   --color-bg-dropdown: #252945;
+  --color-bg-table: #252945;
+  --color-details-tootal-bg: #0c0e16;
 
   /* text */
   --color-text: #ffffff;

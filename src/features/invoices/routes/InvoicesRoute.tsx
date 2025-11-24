@@ -12,7 +12,7 @@ export default function InvoicesRoute() {
   const [status, setStatus] = useState<InvoiceFilterStatus>("all");
   const invoices: Invoice[] = mockInvoices;
 
-  const handleToggle = (): void => {
+  const handleToggle = () => {
     setIsOpen((prev) => !prev);
   };
 

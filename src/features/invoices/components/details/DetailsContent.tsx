@@ -1,4 +1,10 @@
-const DetailsContent = () => {
+import type { Invoice } from "../../types/invoice.types";
+
+type InvoiceProps = {
+  invoice: Invoice;
+};
+
+const DetailsContent = ({ invoice }: InvoiceProps) => {
   return (
     <div className="flex-col bg-bgAlt rounded-lg p-6 mt-4">
       <div
@@ -22,7 +28,7 @@ const DetailsContent = () => {
           <p>United Kingdom</p>
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-11">
         <div>
           <div>
             <p>Invoice Date</p>
@@ -50,8 +56,40 @@ const DetailsContent = () => {
           <strong>alexgrim@mail.com</strong>
         </div>
       </div>
+      <div className="p-6 bg-bgTable rounded-t-lg">
+        <table className="w-full">
+          <thead>
+            <tr>
+              <th className="text-left">Item Name</th>
+              <th>QTY.</th>
+              <th>Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {invoice.items.map((item) => (
+              <tr key={item.id}>
+                <td>{item.name}</td>
+                <td className="text-center">{item.quantity}</td>
+                <td className="text-center">{item.price}</td>
+                <td className="text-center">{item.total}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div
+        className="
+          flex items-center justify-between 
+          p-6 md:px-8 md:py-6 bg-bgTotal rounded-b-lg"
+      >
+        <p>Amount Due</p>
+        <p>£ 556.00</p>
+      </div>
     </div>
   );
 };
 
 export default DetailsContent;
+
+// F9FAFE

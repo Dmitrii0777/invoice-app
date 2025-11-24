@@ -6,6 +6,8 @@ export default {
       colors: {
         bg: "var(--color-bg)",
         bgAlt: "var(--color-bg-alt)",
+        bgTable: "var(--color-bg-table)",
+        bgTotal: "var(--color-details-tootal-bg)",
 
         // Text
         text: "var(--color-text)",
