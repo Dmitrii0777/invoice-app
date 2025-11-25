@@ -46,7 +46,7 @@ export default function InvoiceCard({ invoice }: InvoiceCardProps) {
         £ {total}
       </p>
       <div className="[grid-area:status]">
-        <StatusBadge />
+        <StatusBadge status="draft" />
       </div>
       <Arrow
         direction="left"

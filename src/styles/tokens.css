@@ -13,11 +13,16 @@
   --color-text-dropdown: #1e2139;
   --color-text-gray-blue: #7e88c3;
 
-  /* LIGHT THEME */
+  /* Card */
   --color-text-id: #0c0e16;
   --color-text-due: #7e88c3;
   --color-text-client: #7e88c3;
   --color-text-total: #0c0e16;
+
+  /* Status */
+  --color-status-paid: 51, 214, 159;
+  --color-status-pending: 255, 143, 0;
+  --color-status-draft: 55, 59, 83;
 
   /* btn text */
   --accent-btn-text: #7e88c3;

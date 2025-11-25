@@ -1,12 +1,25 @@
-export default function StatusBadge() {
+import type { InvoiceStatus } from "../../features/invoices/types/invoice.types";
+
+interface StatusProps {
+  status: InvoiceStatus;
+}
+
+export default function StatusBadge({ status }: StatusProps) {
   return (
     <div
-      className="
-      flex items-center gap-2 px-7 py-3 
-      bg-[#33D69F]/5 rounded-md"
+      className="inline-flex items-center gap-2 px-7 py-3 rounded-md"
+      style={{ backgroundColor: `rgba(var(--color-status-${status}), 0.1)` }}
     >
-      <span className="h-2 w-2 bg-[#33D69F] rounded-full"></span>
-      <span className="text-[#33D69F] font-bold">Paid</span>
+      <span
+        className="h-2 w-2 rounded-full mt-1"
+        style={{ backgroundColor: `rgb(var(--color-status-${status}))` }}
+      ></span>
+      <span
+        className="font-bold"
+        style={{ color: `rgb(var(--color-status-${status}))` }}
+      >
+        {status}
+      </span>
     </div>
   );
 }
