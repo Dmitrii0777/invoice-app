@@ -1,6 +1,17 @@
 import { Button } from "../../../components/ui";
+import { useModal } from "../ModalContext";
+import { useInvoices } from "../../invoices";
 
 const DeleteInvoiceModal = () => {
+  const { closeModal } = useModal();
+  const { deleteInvoice } = useInvoices();
+
+  const handleDelete = () => {
+    console.log("Delete #XM9141");
+    deleteInvoice("#XM9141");
+    closeModal();
+  };
+
   return (
     <div
       className="
@@ -15,10 +26,18 @@ const DeleteInvoiceModal = () => {
         </p>
       </div>
       <div className="flex items-center justify-end gap-2">
-        <Button variant="bg-accent" className="text-text-gray">
+        <Button
+          variant="bg-accent"
+          className="text-text-gray"
+          onClick={closeModal}
+        >
           Cancel
         </Button>
-        <Button variant="bg-danger" className="text-white">
+        <Button
+          variant="bg-danger"
+          className="text-white"
+          onClick={handleDelete}
+        >
           Delete
         </Button>
       </div>

@@ -68,7 +68,7 @@ const DetailsContent = ({ invoice }: InvoiceProps) => {
           </thead>
           <tbody>
             {invoice.items.map((item) => (
-              <tr key={item.id}>
+              <tr key={item.name}>
                 <td>{item.name}</td>
                 <td className="text-center">{item.quantity}</td>
                 <td className="text-center">{item.price}</td>
@@ -91,5 +91,3 @@ const DetailsContent = ({ invoice }: InvoiceProps) => {
 };
 
 export default DetailsContent;
-
-// F9FAFE

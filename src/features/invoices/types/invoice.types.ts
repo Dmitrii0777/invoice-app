@@ -2,7 +2,7 @@ export type InvoiceStatus = "paid" | "pending" | "draft";
 export type InvoiceFilterStatus = InvoiceStatus | "all";
 
 export interface InvoiceItem {
-  id: number;
+  // id: number;
   name: string;
   quantity: number;
   price: number;
@@ -18,11 +18,12 @@ export interface Address {
 
 export interface Invoice {
   id: string;
-  createAt: string;
+  createdAt: string;
   paymentDue: string;
+  description: string;
+  paymentTerms: number;
   clientName: string;
   clientEmail: string;
-  description: string;
   status: InvoiceStatus;
   senderAddress: Address;
   clientAddress: Address;

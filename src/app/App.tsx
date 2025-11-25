@@ -1,13 +1,16 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 import { ModalProvider, ModalRoot } from "../provider/modal";
+import { InvoicesProvider } from "../provider/invoices";
 
 const App = () => {
   return (
-    <ModalProvider>
-      <ModalRoot />
-      <RouterProvider router={router} />;
-    </ModalProvider>
+    <InvoicesProvider>
+      <ModalProvider>
+        <ModalRoot />
+        <RouterProvider router={router} />;
+      </ModalProvider>
+    </InvoicesProvider>
   );
 };
 
