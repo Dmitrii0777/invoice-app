@@ -7,6 +7,7 @@ import {
 } from "../components/details";
 
 import type { Invoice } from "../types/invoice.types";
+import GoBackButton from "../components/details/GoBackButton";
 
 const InvoicesDetailsRoute = () => {
   const invoice: Invoice = mockInvoices[0];
@@ -14,6 +15,7 @@ const InvoicesDetailsRoute = () => {
   return (
     <>
       <Container>
+        <GoBackButton />
         <DetailsHeader />
         <DetailsFooterActions />
         <DetailsContent invoice={invoice} />

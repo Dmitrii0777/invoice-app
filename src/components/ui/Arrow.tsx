@@ -1,4 +1,4 @@
-type Direction = "down" | "up" | "rigth" | "left";
+type Direction = "down" | "up" | "right" | "left";
 
 interface ArrowProps {
   direction?: Direction;
@@ -19,7 +19,7 @@ export function Arrow({
     case "up":
       rotateClass = open ? "rotate-0" : "rotate-180";
       break;
-    case "rigth":
+    case "right":
       rotateClass = "rotate-90";
       break;
     case "left":

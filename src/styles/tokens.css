@@ -45,3 +45,7 @@
   /* buttons */
   --accent-btn-bg: #252945;
 }
+
+body {
+  background-color: var(--color-bg);
+}
