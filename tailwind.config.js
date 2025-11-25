@@ -4,30 +4,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: "var(--color-bg)",
-        bgAlt: "var(--color-bg-alt)",
-        bgTable: "var(--color-bg-table)",
-        bgTotal: "var(--color-details-tootal-bg)",
+        /* Backgrounds */
+        bg: "var(--bg-primary)",
+        bgAlt: "var(--bg-secondary)",
+        bgTable: "var(--bg-table)",
+        bgTotal: "var(--bg-details-total)",
+        bgDropdown: "var(--bg-dropdown)",
+        logoPurple: "var(--bg-logo-purple)",
 
-        // Text
-        textBasic: "var(--color-text-basic)",
-        textSecondary: "var(--color-text-secondary)",
-        "text-gray": "var(--color-text-gray-blue)",
+        /* Text */
+        textPrimary: "var(--text-primary)",
+        textSecondary: "var(--text-secondary)",
+        textGrayBlue: "var(--text-gray-blue)",
+        textDropdown: "var(--text-dropdown)",
+        textCardId: "var(--text-card-id)",
+        textCardDue: "var(--text-card-due)",
+        textCardClient: "var(--text-card-client)",
+        textCardTotal: "var(--text-card-total)",
 
-        // Buttons
-        primary: "var(--color-btn-primary)",
-        danger: "var(--color-btn-danger)",
-        accent: "var(--accent-btn-bg)",
-
-        // btn text
-        "text-accent": "var(--accent-btn-text)",
-
-        bgDropdown: "var(--color-bg-dropdown)",
-        txDrop: "var(--color-text-dropdown)",
-        "logo-purple": "var(--color-bg-logo-purple)",
+        /* Buttons */
+        btnPrimary: "var(--btn-primary)",
+        btnDanger: "var(--btn-danger)",
+        btnAccentBg: "var(--btn-bg-accent)",
+        btnTextAccent: "var(--btn-text-accent)",
 
         /* Hover */
-        "hover-purple": "var(--color-hover-purple)",
+        hoverPurple: "var(--hover-purple)",
       },
       screens: {
         xs: "480px",

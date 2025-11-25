@@ -7,7 +7,7 @@ interface IButton {
 }
 
 export const buttons: IButton[] = [
-  { text: "Edit", variant: "bg-accent", textClass: "text-text-accent" },
-  { text: "Delete", variant: "bg-danger", textClass: "text-white" },
-  { text: "Mark as Paid", variant: "bg-primary", textClass: "text-white" },
+  { text: "Edit", variant: "bg-btnAccentBg", textClass: "text-text-accent" },
+  { text: "Delete", variant: "bg-btnDanger", textClass: "text-white" },
+  { text: "Mark as Paid", variant: "bg-btnPrimary", textClass: "text-white" },
 ];

@@ -20,7 +20,7 @@ const DetailsHeader = ({ status }: DetailProps) => {
           "
     >
       <div className="flex items-center w-full md:w-auto justify-between md:gap-3">
-        <span className="text-text-gray font-medium mr-2">Status</span>
+        <span className="text-textGrayBlue font-medium mr-2">Status</span>
         <StatusBadge status={status} />
       </div>
       <div className="hidden md:flex items-center gap-2">

@@ -20,29 +20,17 @@ export default function InvoiceCard({ invoice }: InvoiceCardProps) {
         bg-bgAlt rounded-lg p-8 shadow-sm
       "
     >
-      <h3
-        className="[grid-area:id] mb-6 md:mb-0 font-bold"
-        style={{ color: "var(--color-text-id)" }}
-      >
+      <h3 className="[grid-area:id] mb-6 md:mb-0 font-bold text-base text-textCardId">
         <span className="text-[#7e88c3]">#</span>
         {id}
       </h3>
-      <p
-        className="[grid-area:due] font-medium"
-        style={{ color: "var(--color-text-due)" }}
-      >
+      <p className="[grid-area:due] font-medium text-textCardDue">
         {paymentDue}
       </p>
-      <p
-        className="[grid-area:client] mb-6 md:mb-0 font-medium"
-        style={{ color: "var(--color-text-client)" }}
-      >
+      <p className="[grid-area:client] mb-6 md:mb-0 font-medium text-textCardClient">
         {clientName}
       </p>
-      <p
-        className="[grid-area:total] font-bold"
-        style={{ color: "var(--color-text-total)" }}
-      >
+      <p className="[grid-area:total] text-[15px] font-bold text-textCardTotal">
         £ {total}
       </p>
       <div className="[grid-area:status]">

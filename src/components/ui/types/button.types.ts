@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export type Variant = "bg-primary" | "bg-danger" | "bg-accent";
+export type Variant = "bg-btnPrimary" | "bg-btnDanger" | "bg-btnAccentBg";
 
 export type ButtonProps = {
   variant?: Variant;

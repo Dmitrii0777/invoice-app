@@ -7,7 +7,7 @@ function Button({
   children,
   className = "",
 }: ButtonProps) {
-  const combined = `${variant} ${className} px-5 py-4 rounded-3xl text-sm font-bold tracking-[0.25px]`;
+  const combined = `${variant} ${className} px-5 py-4 rounded-3xl text-[15px] font-bold tracking-[0.25px]`;
 
   return (
     <button className={combined} disabled={disabled} onClick={onClick}>

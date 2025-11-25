@@ -12,9 +12,13 @@ const DetailsContent = ({ invoice }: InvoiceProps) => {
           flex flex-col items-start gap-7 mb-8
           md:flex-row md:justify-between md:mb-5"
       >
-        <div>
-          <p>
-            <span>#</span>XM9141
+        <div className="flex flex-col gap-1 md:gap-2">
+          <p
+            className="font-bold text-base"
+            style={{ color: "var(--color-text-id)" }}
+          >
+            <span className="text-[#7e88c3]">#</span>
+            XM9141
           </p>
           <p>Graphic Design</p>
         </div>
