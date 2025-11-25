@@ -3,8 +3,13 @@ import { Button } from "../../../../components/ui";
 import { buttons } from "./details.actions";
 import { useModal } from "../../../../provider/modal";
 import { DeleteInvoiceModal } from "../../../../provider/modal";
+import type { InvoiceStatus } from "../../types/invoice.types";
 
-const DetailsHeader = () => {
+interface DetailProps {
+  status: InvoiceStatus;
+}
+
+const DetailsHeader = ({ status }: DetailProps) => {
   const { openModal } = useModal();
 
   return (
@@ -16,7 +21,7 @@ const DetailsHeader = () => {
     >
       <div className="flex items-center w-full md:w-auto justify-between md:gap-3">
         <span className="text-text-gray font-medium mr-2">Status</span>
-        <StatusBadge />
+        <StatusBadge status={status} />
       </div>
       <div className="hidden md:flex items-center gap-2">
         {buttons.map(({ text, variant, textClass }) => (

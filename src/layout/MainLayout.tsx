@@ -6,7 +6,7 @@ export default function MainLayout() {
     <div
       className="
       min-h-screen
-      pt-20 md:pt-27 lg:pt-11"
+      pt-24 md:pt-27 lg:pt-11"
     >
       <Sidebar />
       <main className="lg:ml-[103px]">

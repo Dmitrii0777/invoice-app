@@ -15,7 +15,11 @@ export default function InvoicesHeader({
   onChangeStatus,
 }: InvoiceFilterProp) {
   return (
-    <header className=" flex items-center justify-between">
+    <header
+      className="
+        flex items-center justify-between mb-8 md:mb-14 lg:mb-16
+      "
+    >
       <div>
         <h1
           className="

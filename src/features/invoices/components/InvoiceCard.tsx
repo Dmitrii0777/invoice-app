@@ -7,7 +7,7 @@ interface InvoiceCardProps {
 }
 
 export default function InvoiceCard({ invoice }: InvoiceCardProps) {
-  const { id, paymentDue, clientName, total } = invoice;
+  const { id, paymentDue, clientName, total, status } = invoice;
 
   return (
     <article
@@ -46,7 +46,7 @@ export default function InvoiceCard({ invoice }: InvoiceCardProps) {
         £ {total}
       </p>
       <div className="[grid-area:status]">
-        <StatusBadge status="draft" />
+        <StatusBadge status={status} />
       </div>
       <Arrow
         direction="left"

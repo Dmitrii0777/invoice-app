@@ -7,7 +7,7 @@ interface StatusProps {
 export default function StatusBadge({ status }: StatusProps) {
   return (
     <div
-      className="inline-flex items-center gap-2 px-7 py-3 rounded-md"
+      className="inline-flex w-28 items-center justify-center gap-2 px-4 py-3 rounded-md"
       style={{ backgroundColor: `rgba(var(--color-status-${status}), 0.1)` }}
     >
       <span

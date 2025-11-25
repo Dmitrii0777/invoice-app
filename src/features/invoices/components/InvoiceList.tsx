@@ -10,7 +10,7 @@ function InvoiceList({ invoices }: InvoiceListProps) {
   const navigate = useNavigate();
 
   return (
-    <ul>
+    <ul className="flex flex-col gap-4">
       {invoices.length > 0 &&
         invoices.map((invoice) => (
           <li

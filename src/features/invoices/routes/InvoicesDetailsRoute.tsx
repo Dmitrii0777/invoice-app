@@ -11,12 +11,13 @@ import GoBackButton from "../components/details/GoBackButton";
 
 const InvoicesDetailsRoute = () => {
   const invoice: Invoice = mockInvoices[0];
+  const { status } = invoice;
 
   return (
     <>
       <Container>
         <GoBackButton />
-        <DetailsHeader />
+        <DetailsHeader status={status} />
         <DetailsFooterActions />
         <DetailsContent invoice={invoice} />
       </Container>
