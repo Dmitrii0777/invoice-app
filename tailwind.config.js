@@ -3,6 +3,56 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontSize: {
+        // Main text (13px / 18px)
+        body: [
+          "var(--fs-body)",
+          {
+            lineHeight: "var(--lh-body)",
+            letterSpacing: "var(--ls-body)",
+          },
+        ],
+        // Compact body (13px / 15px) - tables, narrow elements
+        bodyVar: [
+          "var(--fs-body-variant)",
+          {
+            lineHeight: "var(--lh-body-variant)",
+            letterSpacing: "var(--ls-body-variant)",
+          },
+        ],
+        // Small header (15px / 24px)
+        headingS: [
+          "var(--fs-heading-s)",
+          {
+            lineHeight: "var(--lh-heading-s)",
+            letterSpacing: "var(--ls-heading-s)",
+          },
+        ],
+        // Compact version of the small heading (15px / 15px)
+        headingSVar: [
+          "var(--fs-heading-s-var)",
+          {
+            lineHeight: "var(--lh-heading-s-var)",
+            letterSpacing: "var(--ls-heading-s-var)",
+          },
+        ],
+        // Medium Header (24px / 22px)
+        headingM: [
+          "var(--fs-heading-m)",
+          {
+            lineHeight: "var(--lh-heading-m)",
+            letterSpacing: "var(--ls-heading-m)",
+          },
+        ],
+        // Large Headline (36px / 33px)
+        headingL: [
+          "var(--fs-heading-l)",
+          {
+            lineHeight: "var(--lh-heading-l)",
+            letterSpacing: "var(--ls-heading-l)",
+          },
+        ],
+      },
       colors: {
         /* Backgrounds */
         bg: "var(--bg-primary)",

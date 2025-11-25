@@ -6,6 +6,39 @@
    Backgrounds
 ----------------------- */
 :root {
+  /* Text size/spasing/line-height */
+  /* Body */
+  --fs-body: 13px;
+  --lh-body: 18px;
+  --ls-body: -0.1px;
+
+  /* Body Variant */
+  --fs-body-variant: 13px;
+  --lh-body-variant: 15px;
+  --ls-body-variant: -0.25px;
+
+  /* Heading S */
+  --fs-heading-s: 15px;
+  --lh-heading-s: 24px;
+  --ls-heading-s: -0.25px;
+
+  /* Heading S Variant */
+  --fs-heading-s-var: 15px;
+  --lh-heading-s-var: 15px;
+  --ls-heading-s-var: -0.25px;
+
+  /* Heading M */
+  --fs-heading-m: 24px;
+  --lh-heading-m: 22px;
+  --ls-heading-m: -0.75px;
+
+  /* Heading L */
+  --fs-heading-l: 36px;
+  --lh-heading-l: 33px;
+  --ls-heading-l: -1px;
+
+  /* Color text/bg */
+
   --bg-primary: #f8f8fb;
   --bg-secondary: #ffffff;
   --bg-dropdown: #ffffff;
@@ -78,6 +111,6 @@
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-size: 13px;
-  line-height: 15px;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
 }
