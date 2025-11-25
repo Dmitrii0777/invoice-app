@@ -10,24 +10,48 @@ export default function InvoiceCard({ invoice }: InvoiceCardProps) {
   const { id, paymentDue, clientName, total } = invoice;
 
   return (
-    <article className="bg-bgAlt mt-10 rounded-lg p-8 shadow-sm">
-      <div
-        className="
-        flex flex-col gap-4 justify-between 
-        md:flex-row md:items-center"
+    <article
+      className="
+        grid items-center justify-between
+        [grid-template-areas:'id_client'_'due_due'_'total_status']
+        md:[grid-template-columns:auto_auto_1fr_auto_auto_auto]
+        md:[grid-template-areas:'id_due_client_total_status_arrow']
+        md:gap-7
+        bg-bgAlt rounded-lg p-8 shadow-sm
+      "
+    >
+      <h3
+        className="[grid-area:id] mb-6 md:mb-0 font-bold"
+        style={{ color: "var(--color-text-id)" }}
       >
-        <h3>
-          <span>#</span>
-          {id}
-        </h3>
-        <p>{paymentDue}</p>
-        <p>{clientName}</p>
-        <p>£ {total}</p>
-        <div>
-          <StatusBadge />
-        </div>
-        <Arrow className="hidden md:inline-block" direction="left" />
+        <span className="text-[#7e88c3]">#</span>
+        {id}
+      </h3>
+      <p
+        className="[grid-area:due] font-medium"
+        style={{ color: "var(--color-text-due)" }}
+      >
+        {paymentDue}
+      </p>
+      <p
+        className="[grid-area:client] mb-6 md:mb-0 font-medium"
+        style={{ color: "var(--color-text-client)" }}
+      >
+        {clientName}
+      </p>
+      <p
+        className="[grid-area:total] font-bold"
+        style={{ color: "var(--color-text-total)" }}
+      >
+        £ {total}
+      </p>
+      <div className="[grid-area:status]">
+        <StatusBadge />
       </div>
+      <Arrow
+        direction="left"
+        className="hidden md:inline-block [grid-area:arrow]"
+      />
     </article>
   );
 }

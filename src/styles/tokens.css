@@ -13,6 +13,12 @@
   --color-text-dropdown: #1e2139;
   --color-text-gray-blue: #7e88c3;
 
+  /* LIGHT THEME */
+  --color-text-id: #0c0e16;
+  --color-text-due: #7e88c3;
+  --color-text-client: #7e88c3;
+  --color-text-total: #0c0e16;
+
   /* btn text */
   --accent-btn-text: #7e88c3;
 
@@ -38,6 +44,11 @@
   --color-text-secondary: #dfe3fa;
   --color-text-dropdown: #ffffff;
   --color-text-gray-blue: #dfe3fa;
+
+  --color-text-id: #ffffff;
+  --color-text-due: #dfe3fa;
+  --color-text-client: #ffffff;
+  --color-text-total: #ffffff;
 
   /* btn text */
   --accent-btn-text: #dfe3fa;
