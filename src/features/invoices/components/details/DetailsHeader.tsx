@@ -4,13 +4,18 @@ import { buttons } from "./details.actions";
 import { useModal } from "../../../../provider/modal";
 import { DeleteInvoiceModal } from "../../../../provider/modal";
 import type { InvoiceStatus } from "../../types/invoice.types";
+import { useParams, useNavigate } from "react-router-dom";
 
 interface DetailProps {
   status: InvoiceStatus;
 }
 
 const DetailsHeader = ({ status }: DetailProps) => {
+  const { id } = useParams<{ id: string }>();
   const { openModal } = useModal();
+  const navigate = useNavigate();
+
+  if (!id) return;
 
   return (
     <div
@@ -27,7 +32,11 @@ const DetailsHeader = ({ status }: DetailProps) => {
         {buttons.map(({ text, variant, textClass }) => (
           <Button
             onClick={() =>
-              text === "Delete" && openModal(<DeleteInvoiceModal />, "center")
+              text === "Delete" &&
+              openModal(
+                <DeleteInvoiceModal id={id} onNavigate={navigate} />,
+                "center"
+              )
             }
             key={text}
             variant={variant}
