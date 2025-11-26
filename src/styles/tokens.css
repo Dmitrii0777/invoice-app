@@ -1,7 +1,9 @@
 /* =======================
    TOKENS.CSS
 ======================= */
-
+/* 
+   Text Size
+*/
 /* -----------------------
    Backgrounds
 ----------------------- */
@@ -32,11 +34,17 @@
   --lh-heading-m: 22px;
   --ls-heading-m: -0.75px;
 
+  /* Heading M Variant */
+  --fs-heading-m-var: 24px;
+  --lh-heading-m-var: 33px;
+  --ls-heading-m-var: -0.5px;
+
   /* Heading L */
   --fs-heading-l: 36px;
   --lh-heading-l: 33px;
   --ls-heading-l: -1px;
 
+  /* =================================== */
   /* Color text/bg */
 
   --bg-primary: #f8f8fb;
@@ -49,10 +57,10 @@
   /* -----------------------
      Text
   ----------------------- */
-  --text-primary: #0c0e16; /* основной текст */
+  --text-primary: #0c0e16; /* основной текст 8 */
   --text-secondary: #7e88c3; /* второстепенный текст / подсказки */
   --text-dropdown: #1e2139; /* текст в дропдаунах */
-  --text-gray-blue: #858bb2; /* нейтральный / серо-синий */
+  --text-gray-blue: #888eb0; /* нейтральный / серо-синий */
 
   /* Card specific */
   --text-card-id: #0c0e16;

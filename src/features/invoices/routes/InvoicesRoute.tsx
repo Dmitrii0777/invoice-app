@@ -22,13 +22,15 @@ export default function InvoicesRoute() {
       : invoices.filter((invoice) => invoice.status === status);
 
   return (
-    <Container>
-      <Header
-        isOpen={isOpen}
-        toggle={handleToggle}
-        onChangeStatus={setStatus}
-      />
-      <InvoiceList invoices={filteredInvoices} />
-    </Container>
+    <div className="pt-28 pb-5 md:pt-36 lg:pt-20">
+      <Container>
+        <Header
+          isOpen={isOpen}
+          toggle={handleToggle}
+          onChangeStatus={setStatus}
+        />
+        <InvoiceList invoices={filteredInvoices} />
+      </Container>
+    </div>
   );
 }

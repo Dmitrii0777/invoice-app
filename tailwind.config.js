@@ -44,6 +44,14 @@ export default {
             letterSpacing: "var(--ls-heading-m)",
           },
         ],
+        // Compact version of the medium heading (24px / 32px)
+        headingMVar: [
+          "var(--fs-heading-m-var)",
+          {
+            lineHeight: "var(--lh-heading-m-var)",
+            letterSpacing: "var(--ls-heading-m-var)",
+          },
+        ],
         // Large Headline (36px / 33px)
         headingL: [
           "var(--fs-heading-l)",
@@ -72,8 +80,39 @@ export default {
         textCardClient: "var(--text-card-client)",
         textCardTotal: "var(--text-card-total)",
 
+        // Purple
+        purple: {
+          100: "#7C5DFA", // основной
+          200: "#9277FF", // светлее
+        },
+
+        // Dark Blue / Indigo
+        indigo: {
+          100: "#1E2139", // основной темный
+          200: "#252945", // чуть светлее
+        },
+
+        // Blue Gray / Neutral
+        blueGray: {
+          100: "#0C0E16",
+          200: "#7E88C3",
+          300: "#888EB0",
+          400: "#DFE3FA",
+        },
+
+        // Red / Danger
+        red: {
+          100: "#EC5757",
+        },
+
+        // Backgrounds
+        bg: {
+          100: "#F8F8FB", // light
+          200: "#141625", // dark
+        },
+
         /* Buttons */
-        btnPrimary: "var(--btn-primary)",
+        bgPrimary: "var(--btn-primary)",
         btnDanger: "var(--btn-danger)",
         btnAccentBg: "var(--btn-bg-accent)",
         btnTextAccent: "var(--btn-text-accent)",

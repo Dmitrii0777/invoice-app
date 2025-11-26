@@ -15,12 +15,12 @@ const DetailsHeader = ({ status }: DetailProps) => {
   return (
     <div
       className="
-            flex items-center p-6 bg-bgAlt 
-            md:justify-between md:px-8 md:py-5 rounded-lg
+            flex items-center p-6 bg-bgAlt mb-4
+            md:justify-between md:px-8 md:py-5 md:mb-6 rounded-lg
           "
     >
       <div className="flex items-center w-full md:w-auto justify-between md:gap-3">
-        <span className="text-textGrayBlue font-medium mr-2">Status</span>
+        <span className="text-textGrayBlue text-bodyVar mr-2">Status</span>
         <StatusBadge status={status} />
       </div>
       <div className="hidden md:flex items-center gap-2">

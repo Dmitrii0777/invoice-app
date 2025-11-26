@@ -23,23 +23,23 @@ export default function InvoicesHeader({
       <div>
         <h1
           className="
-          text-2xl md:text-4xl font-bold
+          text-headingM md:text-headingL font-bold
           mb-1 md:mb-2
           "
         >
           Invoices
         </h1>
-        <p className="text-slate-500/70 hidden md:block">
+        <p className="text-textGrayBlue text-bodyVar hidden md:block">
           There are<span> 7 </span>total invoices
         </p>
-        <p className="text-xs text-slate-500/70 md:hidden">
+        <p className="text-xs text-textGrayBlue text-bodyVar md:hidden">
           <span> 7 </span> invoices
         </p>
       </div>
       <div className="flex items-center gap-5 md:gap-10">
         <div className="relative">
           <button className="flex items-center " onClick={toggle}>
-            <span className="font-bold mr-3 md:mr-4 text-[15px]">
+            <span className="font-bold mr-3 md:mr-4 text-headingS">
               Filter <span className="hidden md:inline">by status</span>
             </span>
             <Arrow open={isOpen} />
@@ -50,7 +50,7 @@ export default function InvoicesHeader({
         <Button
           className="
           flex items-center gap-4 text-white"
-          variant="bg-btnPrimary"
+          variant="bg-purple-100"
         >
           <span
             className="

@@ -12,12 +12,12 @@ function Logo() {
       <div
         className="
         absolute top-0 left-0 
-        h-full w-full bg-btnPrimary "
+        h-full w-full bg-purple-100"
       ></div>
       <div
         className="
         absolute rigth-0 bottom-0 
-        h-1/2 w-full bg-logoPurple 
+        h-1/2 w-full bg-purple-200 
         rounded-tl-[20px]"
       ></div>
 
