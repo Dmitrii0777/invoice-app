@@ -40,6 +40,14 @@ const invoiceSlise = createSlice({
         invoice.status = action.payload.status;
       }
     },
+    updateInvoice: (state, action: PayloadAction<Invoice>) => {
+      const index = state.invoices.findIndex(
+        (ind) => ind.id === action.payload.id
+      );
+      if (index !== -1) {
+        state.invoices[index] = action.payload;
+      }
+    },
     setFilter: (state, action: PayloadAction<InvoiceStatus | "all">) => {
       state.filter = action.payload;
     },

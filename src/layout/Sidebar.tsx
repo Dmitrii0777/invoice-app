@@ -1,9 +1,9 @@
-import Button from "../components/ui/button/Button";
-import SunIcon from "../components/ui/SunIcon";
-import Logo from "../components/ui/logo/Logo";
-import MoonIcon from "../components/ui/MoonIcon";
+import Button from "@/components/ui/Button";
+import SunIcon from "@/components/ui/SunIcon";
+import Logo from "@/components/ui/logo/Logo";
+import MoonIcon from "@/components/ui/MoonIcon";
 
-import avatar from "../assets/images/avatar.jpg";
+import avatar from "@/assets/images/avatar.jpg";
 
 export default function Sidebar() {
   return (

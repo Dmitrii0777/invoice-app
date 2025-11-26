@@ -1,10 +1,10 @@
 // Local components
-import { Arrow } from "../components/ui/Arrow";
-import Button from "../components/ui/button/Button";
-import InvoiceFilters from "../features/invoices/components/filters/InvoiceFilters";
+import { Arrow } from "@/components/ui/Arrow";
+import Button from "@/components/ui/Button";
+import InvoiceFilters from "@/features/invoices/components/filters/InvoiceFilters";
 
 // Types
-import type { InvoiceFilterStatus } from "../features/invoices/types/invoice.types";
+import type { InvoiceFilterStatus } from "@/features/invoices/types/invoice.types";
 
 type InvoiceFilterProp = {
   isOpen: boolean;

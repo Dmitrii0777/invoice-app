@@ -1,4 +1,4 @@
-import type { Variant } from "../../../../components/ui/types/button.types";
+import type { Variant } from "@/components/ui/Button";
 
 interface IButton {
   text: string;
