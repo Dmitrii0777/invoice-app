@@ -1,6 +1,9 @@
+// Local components
 import { Arrow } from "../components/ui/Arrow";
 import Button from "../components/ui/button/Button";
 import InvoiceFilters from "../features/invoices/components/filters/InvoiceFilters";
+
+// Types
 import type { InvoiceFilterStatus } from "../features/invoices/types/invoice.types";
 
 type InvoiceFilterProp = {
@@ -50,7 +53,7 @@ export default function InvoicesHeader({
         <Button
           className="
           flex items-center gap-4 text-white"
-          variant="bg-purple-100"
+          variant="bg-bgPrimary"
         >
           <span
             className="

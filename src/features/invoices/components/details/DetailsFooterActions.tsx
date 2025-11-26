@@ -1,7 +1,22 @@
-import { Button } from "../../../../components/ui";
+// External libraries
+import { useNavigate, useParams } from "react-router-dom";
+
+// Local components
+import { Button } from "@/components/ui";
+
+// Local actions / utils
 import { buttons } from "./details.actions";
 
+// Context / Providers
+import { useModal, DeleteInvoiceModal } from "@/provider/modal";
+
 const DetailsFooterActions = () => {
+  const { id } = useParams<{ id: string }>();
+  const { openModal } = useModal();
+  const navigate = useNavigate();
+
+  if (!id) return;
+
   return (
     <div
       className="
@@ -10,7 +25,19 @@ const DetailsFooterActions = () => {
         "
     >
       {buttons.map(({ text, variant, textClass }) => (
-        <Button key={text} variant={variant} className={textClass}>
+        <Button
+          key={text}
+          variant={variant}
+          className={textClass}
+          onClick={() => {
+            if (text === "Delete") {
+              openModal(
+                <DeleteInvoiceModal id={id} onNavigate={navigate} />,
+                "center"
+              );
+            }
+          }}
+        >
           {text}
         </Button>
       ))}

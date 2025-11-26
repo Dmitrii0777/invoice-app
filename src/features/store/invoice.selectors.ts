@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import type { RootState } from "../../app/store";
+import type { RootState } from "@/app/store";
 
 export const selectAllInvoices = (state: RootState) => state.invoices.invoices;
 export const selectFilter = (state: RootState) => state.invoices.filter;

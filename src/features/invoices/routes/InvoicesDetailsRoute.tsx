@@ -1,18 +1,25 @@
-import { useInvoices } from "../../../provider/invoices";
-import { Container } from "../../../layout";
+// External libraries
+import { useParams } from "react-router-dom";
+
+// Absolute / global imports (aliases)
+import { Container } from "@/layout";
+import { useAppSelect } from "@/app/hooks";
+
+// Redux selectors
+import { selectInvoiceById } from "@/features/store/invoice.selectors";
+
+// Local components
 import {
   DetailsFooterActions,
   DetailsHeader,
   DetailsContent,
 } from "../components/details";
 import GoBackButton from "../components/details/GoBackButton";
-import { useParams } from "react-router-dom";
 
 const InvoicesDetailsRoute = () => {
   const { id } = useParams<{ id: string }>();
-  const { invoices } = useInvoices();
 
-  const invoice = invoices.find((invoice) => invoice.id === id);
+  const invoice = useAppSelect(selectInvoiceById(id!));
 
   if (!invoice) return <div>Invoice not found</div>;
 
@@ -21,8 +28,8 @@ const InvoicesDetailsRoute = () => {
       <Container>
         <GoBackButton />
         <DetailsHeader status={invoice.status} />
-        <DetailsFooterActions />
         <DetailsContent invoice={invoice} />
+        <DetailsFooterActions />
       </Container>
     </div>
   );

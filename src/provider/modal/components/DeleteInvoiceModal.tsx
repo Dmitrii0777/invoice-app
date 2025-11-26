@@ -1,22 +1,30 @@
-import { Button } from "../../../components/ui";
-import { useModal } from "../ModalContext";
-import { useInvoices } from "../../invoices";
+// Absolute / global imports (aliases)
+import { useAppDispatch } from "@/app/hooks";
 
+// Redux actions / state
+import { deleteInvoice } from "@/features/store/invoice.slice";
+
+// Local components
+import { Button } from "@/components/ui";
+
+// Context / Providers
+import { useModal } from "../ModalContext";
 interface IdProps {
   id: string;
   onNavigate: (path: string) => void;
 }
 
 const DeleteInvoiceModal = ({ id, onNavigate }: IdProps) => {
+  const dispatch = useAppDispatch();
+
   const { closeModal } = useModal();
-  const { deleteInvoice } = useInvoices();
 
   const handleDelete = () => {
     if (!id) return;
     console.log(`Delete ${id}`);
-    closeModal();
-    deleteInvoice(id);
+    dispatch(deleteInvoice(id));
     onNavigate("/");
+    closeModal();
   };
 
   return (

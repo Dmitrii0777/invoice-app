@@ -1,25 +1,33 @@
+// External libraries
 import { useState } from "react";
-import { Container, Header } from "../../../layout";
 
-// import type { Invoice } from "../types/invoice.types";
+// Absolute / global imports (aliases)
+import { Container, Header } from "@/layout";
+import { useAppSelect, useAppDispatch } from "@/app/hooks";
+
+// Redux selectors and actions
+import { selectFilteredInvoices } from "@/features/store/invoice.selectors";
+import { setFilter } from "@/features/store/invoice.slice";
+
+// Local components
+import InvoiceList from "../components/InvoiceList";
+
+// Types
 import type { InvoiceFilterStatus } from "../types/invoice.types";
 
-import InvoiceList from "../components/InvoiceList";
-import { useInvoices } from "../../../provider/invoices";
-
 export default function InvoicesRoute() {
+  const dispatch = useAppDispatch();
+  const invoices = useAppSelect(selectFilteredInvoices);
+
   const [isOpen, setIsOpen] = useState(false);
-  const [status, setStatus] = useState<InvoiceFilterStatus>("all");
-  const { invoices } = useInvoices();
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const filteredInvoices =
-    status === "all"
-      ? invoices
-      : invoices.filter((invoice) => invoice.status === status);
+  const handleFilterChange = (filter: InvoiceFilterStatus) => {
+    dispatch(setFilter(filter));
+  };
 
   return (
     <div className="pt-28 pb-5 md:pt-36 lg:pt-20">
@@ -27,9 +35,9 @@ export default function InvoicesRoute() {
         <Header
           isOpen={isOpen}
           toggle={handleToggle}
-          onChangeStatus={setStatus}
+          onChangeStatus={handleFilterChange}
         />
-        <InvoiceList invoices={filteredInvoices} />
+        <InvoiceList invoices={invoices} />
       </Container>
     </div>
   );
