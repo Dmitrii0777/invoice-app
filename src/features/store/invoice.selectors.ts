@@ -1,4 +1,7 @@
+// External libraries
 import { createSelector } from "@reduxjs/toolkit";
+
+// Types
 import type { RootState } from "@/app/store";
 
 export const selectAllInvoices = (state: RootState) => state.invoices.invoices;

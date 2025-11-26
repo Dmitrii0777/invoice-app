@@ -1,4 +1,7 @@
+// External libraries
 import { configureStore } from "@reduxjs/toolkit";
+
+// Redux reducers / state
 import invoiceReducer from "../features/store/invoice.slice";
 
 export const store = configureStore({

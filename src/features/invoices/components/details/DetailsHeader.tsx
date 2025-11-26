@@ -1,21 +1,30 @@
-import { StatusBadge } from "../../../../components/common";
-import { Button } from "../../../../components/ui";
-import { buttons } from "./details.actions";
-import { useModal } from "../../../../provider/modal";
-import { DeleteInvoiceModal } from "../../../../provider/modal";
-import type { InvoiceStatus } from "../../types/invoice.types";
 import { useParams, useNavigate } from "react-router-dom";
+import { StatusBadge } from "@/components/common";
+import { Button } from "@/components/ui";
+import { buttons } from "./details.actions";
+import { useModal } from "@/provider/modal";
+import { DeleteInvoiceModal } from "@/provider/modal";
+import { useAppDispatch } from "@/app/hooks";
+import { updateInvoiceStatus } from "@/features/store/invoice.slice";
+import type { InvoiceStatus } from "@/features/invoices/types/invoice.types";
 
 interface DetailProps {
   status: InvoiceStatus;
 }
 
 const DetailsHeader = ({ status }: DetailProps) => {
+  const dispatch = useAppDispatch();
   const { id } = useParams<{ id: string }>();
   const { openModal } = useModal();
   const navigate = useNavigate();
 
   if (!id) return;
+
+  const handleMarkAsPaid = () => {
+    if (status !== "paid") {
+      dispatch(updateInvoiceStatus({ id: id, status: "paid" }));
+    }
+  };
 
   return (
     <div
@@ -31,16 +40,20 @@ const DetailsHeader = ({ status }: DetailProps) => {
       <div className="hidden md:flex items-center gap-2">
         {buttons.map(({ text, variant, textClass }) => (
           <Button
-            onClick={() =>
-              text === "Delete" &&
-              openModal(
-                <DeleteInvoiceModal id={id} onNavigate={navigate} />,
-                "center"
-              )
-            }
+            onClick={() => {
+              if (text === "Delete") {
+                openModal(
+                  <DeleteInvoiceModal id={id} onNavigate={navigate} />,
+                  "center"
+                );
+              } else if (text === "Mark as Paid") {
+                handleMarkAsPaid();
+              }
+            }}
             key={text}
             variant={variant}
             className={textClass}
+            disabled={status === "paid"}
           >
             {text}
           </Button>

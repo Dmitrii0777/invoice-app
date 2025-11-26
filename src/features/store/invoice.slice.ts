@@ -2,17 +2,14 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 // Local types
-import type {
-  Invoice,
-  InvoiceFilterStatus,
-} from "../invoices/types/invoice.types";
+import type { Invoice, InvoiceStatus } from "../invoices/types/invoice.types";
 
 // Local utils / data
 import { mockInvoices } from "../invoices/lib/utils/mockData";
 
 interface InvoiceState {
   invoices: Invoice[];
-  filter: InvoiceFilterStatus;
+  filter: InvoiceStatus | "all";
 }
 
 const initialState: InvoiceState = {
@@ -32,12 +29,24 @@ const invoiceSlise = createSlice({
         (invoice) => invoice.id !== action.payload
       );
     },
-    setFilter: (state, action: PayloadAction<InvoiceFilterStatus>) => {
+    updateInvoiceStatus: (
+      state,
+      action: PayloadAction<{ id: string; status: InvoiceStatus }>
+    ) => {
+      const invoice = state.invoices.find(
+        (invoice) => invoice.id === action.payload.id
+      );
+      if (invoice) {
+        invoice.status = action.payload.status;
+      }
+    },
+    setFilter: (state, action: PayloadAction<InvoiceStatus | "all">) => {
       state.filter = action.payload;
     },
   },
 });
 
-export const { addInvoice, deleteInvoice, setFilter } = invoiceSlise.actions;
+export const { addInvoice, deleteInvoice, setFilter, updateInvoiceStatus } =
+  invoiceSlise.actions;
 
 export default invoiceSlise.reducer;
