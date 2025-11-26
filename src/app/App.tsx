@@ -3,7 +3,6 @@ import { RouterProvider } from "react-router-dom";
 import { store } from "./store";
 import { router } from "./router";
 import { ModalProvider, ModalRoot } from "../provider/modal";
-// import { InvoicesProvider } from "../provider/invoices";
 
 const App = () => {
   return (
