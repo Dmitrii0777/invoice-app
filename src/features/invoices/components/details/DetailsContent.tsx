@@ -5,6 +5,19 @@ type InvoiceProps = {
 };
 
 const DetailsContent = ({ invoice }: InvoiceProps) => {
+  const {
+    id,
+    clientAddress,
+    clientEmail,
+    clientName,
+    createdAt,
+    description,
+    items,
+    paymentDue,
+    senderAddress,
+    total,
+  } = invoice;
+
   return (
     <div className="flex-col bg-bgAlt rounded-lg p-6">
       <div
@@ -15,18 +28,18 @@ const DetailsContent = ({ invoice }: InvoiceProps) => {
         <div className="flex flex-col gap-2 ">
           <p className="font-bold text-headingSVar md:text-headingS text-textPrimary">
             <span className="text-blueGray-300">#</span>
-            XM9141
+            {id}
           </p>
-          <p className="text-textSecondary text-bodyVar">Graphic Design</p>
+          <p className="text-textSecondary text-bodyVar">{description}</p>
         </div>
         <div
           className="
             flex flex-col items-start md:items-end gap-1 text-textSecondary"
         >
-          <p>19 Union Terrace</p>
-          <p>London</p>
-          <p>E1 3EZ</p>
-          <p>United Kingdom</p>
+          <p>{clientAddress.street}</p>
+          <p>{clientAddress.city}</p>
+          <p>{clientAddress.postCode}</p>
+          <p>{clientAddress.country}</p>
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-9">
@@ -34,13 +47,13 @@ const DetailsContent = ({ invoice }: InvoiceProps) => {
           <div className="flex flex-col gap-3">
             <p className="text-textSecondary text-bodyVar">Invoice Date</p>
             <strong className="text-headingS text-textPrimary">
-              21 Aug 2021
+              {createdAt}
             </strong>
           </div>
           <div className="flex flex-col gap-3 text-textSecondary">
             <p>Payment Due</p>
             <strong className="text-headingS text-textPrimary">
-              20 Sep 2021
+              {paymentDue}
             </strong>
           </div>
         </div>
@@ -48,20 +61,20 @@ const DetailsContent = ({ invoice }: InvoiceProps) => {
           <div className="flex flex-col gap-3">
             <p className="text-textSecondary text-bodyVar">Bill To</p>
             <strong className="text-headingS text-textPrimary">
-              Alex Grim
+              {clientName}
             </strong>
           </div>
           <div className="flex flex-col text-textSecondary">
-            <p>84 Church Way</p>
-            <p>Bradford </p>
-            <p>BD1 9PB</p>
-            <p>United Kingdom</p>
+            <p>{senderAddress.street}</p>
+            <p>{senderAddress.city}</p>
+            <p>{senderAddress.postCode}</p>
+            <p>{senderAddress.country}</p>
           </div>
         </div>
         <div className="flex flex-col gap-3">
           <p className="text-textSecondary text-bodyVar">Sent to</p>
           <strong className="text-headingS text-textPrimary">
-            alexgrim@mail.com
+            {clientEmail}
           </strong>
         </div>
       </div>
@@ -73,7 +86,7 @@ const DetailsContent = ({ invoice }: InvoiceProps) => {
           <div className="text-right">Total</div>
         </div>
 
-        {invoice.items.map((item) => (
+        {items.map((item) => (
           <div
             key={item.name}
             className="
@@ -122,7 +135,7 @@ const DetailsContent = ({ invoice }: InvoiceProps) => {
           p-6 md:px-8 md:py-6 bg-bgTotal rounded-b-lg"
       >
         <p className="text-white">Amount Due</p>
-        <p className="text-white text-headingMVar font-bold">£ 556.00</p>
+        <p className="text-white text-headingMVar font-bold">£ {total}</p>
       </div>
     </div>
   );

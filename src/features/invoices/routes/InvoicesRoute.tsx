@@ -1,16 +1,16 @@
-import { mockInvoices } from "../lib/utils/mockData";
 import { useState } from "react";
 import { Container, Header } from "../../../layout";
 
-import type { Invoice } from "../types/invoice.types";
+// import type { Invoice } from "../types/invoice.types";
 import type { InvoiceFilterStatus } from "../types/invoice.types";
 
 import InvoiceList from "../components/InvoiceList";
+import { useInvoices } from "../../../provider/invoices";
 
 export default function InvoicesRoute() {
   const [isOpen, setIsOpen] = useState(false);
   const [status, setStatus] = useState<InvoiceFilterStatus>("all");
-  const invoices: Invoice[] = mockInvoices;
+  const { invoices } = useInvoices();
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);

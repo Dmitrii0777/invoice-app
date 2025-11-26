@@ -1,4 +1,4 @@
-import { mockInvoices } from "../lib/utils/mockData";
+import { useInvoices } from "../../../provider/invoices";
 import { Container } from "../../../layout";
 import {
   DetailsFooterActions,
@@ -6,18 +6,21 @@ import {
   DetailsContent,
 } from "../components/details";
 import GoBackButton from "../components/details/GoBackButton";
-
-import type { Invoice } from "../types/invoice.types";
+import { useParams } from "react-router-dom";
 
 const InvoicesDetailsRoute = () => {
-  const invoice: Invoice = mockInvoices[0];
-  const { status } = invoice;
+  const { id } = useParams<{ id: string }>();
+  const { invoices } = useInvoices();
+
+  const invoice = invoices.find((invoice) => invoice.id === id);
+
+  if (!invoice) return <div>Invoice not found</div>;
 
   return (
     <div className="py-28 md:pt-32 md:pb-5 lg:pt-16">
       <Container>
         <GoBackButton />
-        <DetailsHeader status={status} />
+        <DetailsHeader status={invoice.status} />
         <DetailsFooterActions />
         <DetailsContent invoice={invoice} />
       </Container>
