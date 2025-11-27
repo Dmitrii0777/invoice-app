@@ -16,6 +16,11 @@ export const invoiceSchema = z.object({
     postCode: z.string().min(1, "Post Code is required"),
     country: z.string().min(1, "Country is required"),
   }),
+  paymentInfo: z.object({
+    invoiceDate: z.string().min(1, "Invoice Date is required"),
+    paymentTerm: z.string().min(1, "Payment Terms is required"),
+    projectDescription: z.string().min(1, "Project Description is required"),
+  }),
 });
 
 export type InvoiceFormType = z.infer<typeof invoiceSchema>;

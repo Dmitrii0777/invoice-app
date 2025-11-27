@@ -14,6 +14,7 @@ import { Container } from "@/layout";
 
 // Types
 import type { InvoiceFormType } from "./schema";
+import PaymentTermsSection from "./sections/PaymentTermsSection";
 
 const InvoiceForm = () => {
   const methods = useInvoiceForm();
@@ -39,7 +40,10 @@ const InvoiceForm = () => {
             {/* Bill To */}
             <BillToSection />
 
-            <Button type="submit" />
+            {/* Payment Terms Date*/}
+            <PaymentTermsSection />
+
+            <Button type="submit">Submit</Button>
           </form>
         </FormProvider>
       </Container>

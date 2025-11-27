@@ -25,6 +25,11 @@ export function useInvoiceForm(defaultValue?: Partial<InvoiceFormType>) {
         postCode: "",
         country: "",
       },
+      paymentInfo: {
+        invoiceDate: "",
+        paymentTerm: "",
+        projectDescription: "",
+      },
     },
   });
 }

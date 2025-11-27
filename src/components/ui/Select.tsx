@@ -22,7 +22,7 @@ const Select = ({
       {label && <label>{label}</label>}
       <select
         {...props}
-        className={`border rounded-md px-3 py-2 text-sm ${className}`}
+        className={`border rounded-md px-4 py-3 text-sm ${className}`}
       >
         {children}
       </select>
