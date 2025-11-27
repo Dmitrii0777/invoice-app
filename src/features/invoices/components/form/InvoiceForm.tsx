@@ -22,15 +22,23 @@ const InvoiceForm = () => {
   };
 
   return (
-    <FormProvider {...methods}>
-      <Container>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <BillFormSection />
+    <div className="lg:ml-[103px] w-full h-full pt-24 sm:pt-32 lg:pt-16">
+      <Container size="small" className="h-full">
+        <FormProvider {...methods}>
+          <h2 className="mb-12 text-textPrimary text-headingMVar font-bold">
+            Edit <span className="text-blueGray-300">#</span>XM9141
+          </h2>
+          <form
+            className="flex flex-col h-full overflow-y-auto"
+            onSubmit={methods.handleSubmit(onSubmit)}
+          >
+            <BillFormSection />
 
-          <Button type="submit" />
-        </form>
+            <Button type="submit" />
+          </form>
+        </FormProvider>
       </Container>
-    </FormProvider>
+    </div>
   );
 };
 
