@@ -21,6 +21,14 @@ export const invoiceSchema = z.object({
     paymentTerm: z.string().min(1, "Payment Terms is required"),
     projectDescription: z.string().min(1, "Project Description is required"),
   }),
+  items: z.array(
+    z.object({
+      name: z.string().min(1),
+      qty: z.number().min(1),
+      price: z.number().min(1),
+      total: z.number(),
+    })
+  ),
 });
 
 export type InvoiceFormType = z.infer<typeof invoiceSchema>;

@@ -30,6 +30,14 @@ export function useInvoiceForm(defaultValue?: Partial<InvoiceFormType>) {
         paymentTerm: "",
         projectDescription: "",
       },
+      items: [
+        {
+          name: "",
+          qty: 1,
+          price: 0,
+          total: 0,
+        },
+      ],
     },
   });
 }
