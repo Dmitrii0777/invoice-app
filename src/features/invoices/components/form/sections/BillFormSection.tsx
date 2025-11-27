@@ -1,9 +1,11 @@
 // useFormContext hook to access parent form
 import { useFormContext } from "react-hook-form";
 
+// Local components
+import Input from "@/components/ui/Input";
+
 // Invoice form types
 import type { InvoiceFormType } from "../schema";
-import Input from "@/components/ui/Input";
 
 const BillFormSection = () => {
   const {
@@ -14,7 +16,7 @@ const BillFormSection = () => {
   return (
     <div>
       <h3>Bill Form</h3>
-      <div className="grid grid-cols-2 gap-4  lg:grid-cols-3">
+      <div className="grid grid-cols-2 gap-6  lg:grid-cols-3">
         {/* Street Address */}
         <Input
           label="Street Address"

@@ -17,6 +17,14 @@ export function useInvoiceForm(defaultValue?: Partial<InvoiceFormType>) {
         postCode: "",
         country: "",
       },
+      billTo: {
+        clientName: "",
+        clientEmail: "",
+        streetAddress: "",
+        city: "",
+        postCode: "",
+        country: "",
+      },
     },
   });
 }
