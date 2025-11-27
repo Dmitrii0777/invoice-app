@@ -1,4 +1,7 @@
+// useFormContext hook to access parent form
 import { useFormContext } from "react-hook-form";
+
+// Invoice form types
 import type { InvoiceFormType } from "../schema";
 
 const BillFormSection = () => {

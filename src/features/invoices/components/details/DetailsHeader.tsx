@@ -53,7 +53,7 @@ const DetailsHeader = ({ status }: DetailProps) => {
             key={text}
             variant={variant}
             className={textClass}
-            disabled={status === "paid" && text === "Paid"}
+            disabled={status === "paid"}
           >
             {text}
           </Button>

@@ -1,9 +1,18 @@
+// React Hook Form
 import { FormProvider } from "react-hook-form";
+
+// Custom hooks
 import { useInvoiceForm } from "./hooks/useInvoiceForm";
+
+// Form sections
 import BillFormSection from "./sections/BillFormSection";
+
+// UI components
 import { Button } from "@/components/ui";
-import type { InvoiceFormType } from "./schema";
 import { Container } from "@/layout";
+
+// Types
+import type { InvoiceFormType } from "./schema";
 
 const InvoiceForm = () => {
   const methods = useInvoiceForm();
