@@ -16,7 +16,7 @@ export default function Sidebar() {
       <div
         className="
         flex items-center justify-between
-        md:h-[80px] h-[72px] lg:h-full 
+        sm:h-[80px] h-[72px] lg:h-full 
         lg:flex-col"
       >
         <Logo />

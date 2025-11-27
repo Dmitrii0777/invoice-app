@@ -5,7 +5,7 @@ function Logo() {
     <div
       className="
           relative w-[72px] h-[72px] 
-          md:w-[80px] md:h-[80px] 
+          sm:w-[80px] sm:h-[80px] 
           lg:w-[103px] lg:h-[103px] 
           rounded-r-[20px] overflow-hidden"
     >

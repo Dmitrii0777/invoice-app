@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 const sizes = {
+  small: "max-w-[504px]",
   narrow: "max-w-2xl",
   default: "max-w-[730px]",
   wide: "max-w-6xl",
@@ -20,6 +21,6 @@ export default function Container({
   size = "default",
   className = "",
 }: ContainerProps) {
-  const combined = `${sizes[size]} ${className} mx-auto px-4`;
+  const combined = `w-full ${sizes[size]} ${className} mx-auto px-4`;
   return <div className={combined}>{children}</div>;
 }

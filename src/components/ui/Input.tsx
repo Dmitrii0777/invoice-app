@@ -3,7 +3,7 @@ import type { InputHTMLAttributes } from "react";
 
 interface BaseProp {
   label?: string;
-  error?: string;
+  error?: React.ReactNode;
   className?: string;
 }
 
@@ -11,15 +11,14 @@ type InputProp = BaseProp & InputHTMLAttributes<HTMLInputElement>;
 
 const Input = ({ label, error, className = "", ...props }: InputProp) => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className={`flex flex-col gap-2 ${className}`}>
       {label && <label>{label}</label>}
       <input
         className={`
           px-4 py-3 rounded border border-gray-200
           focus:border-purple-500 focus:outline-none
           ${error ? "border-red-500" : ""}
-          ${className}
-          
+          w-full
         `}
         {...props}
       />
