@@ -2,6 +2,10 @@
 import { Arrow } from "@/components/ui/Arrow";
 import Button from "@/components/ui/Button";
 import InvoiceFilters from "@/features/invoices/components/filters/InvoiceFilters";
+import InvoiceForm from "@/features/invoices/components/form/InvoiceForm";
+
+// Context / Providers
+import { useModal } from "@/provider/modal";
 
 // Types
 import type { InvoiceFilterStatus } from "@/features/invoices/types/invoice.types";
@@ -17,6 +21,8 @@ export default function InvoicesHeader({
   isOpen,
   onChangeStatus,
 }: InvoiceFilterProp) {
+  const { openModal } = useModal();
+
   return (
     <header
       className="
@@ -54,6 +60,7 @@ export default function InvoicesHeader({
           className="
           flex items-center gap-4 text-white"
           variant="bg-bgPrimary"
+          onClick={() => openModal(<InvoiceForm />, "left")}
         >
           <span
             className="

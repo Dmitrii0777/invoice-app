@@ -1,30 +1,34 @@
 import { createPortal } from "react-dom";
 import { useModal } from "./ModalContext";
 
+import type { ModalPosition } from "./modal.types";
+
 const ModalRoot = () => {
   const { isOpen, content, position, closeModal } = useModal();
 
   if (!isOpen) return null;
 
-  let positionClasses = "";
-  switch (position) {
-    case "center":
-      positionClasses = "justify-center items-center";
-      break;
-    case "left":
-      positionClasses = "justy=ify-start items-start";
-      break;
-    case "right":
-      positionClasses = "justify-end items-start";
-      break;
-  }
+  const positionClassesMap = {
+    center: "justify-center items-center",
+    left: "justify-start items-center",
+    right: "justify-end items-start",
+  };
+
+  const settingsFormMap: Partial<Record<ModalPosition, string>> = {
+    left: "flex flex-col w-full h-full lg:flex-row sm:max-w-[640px] lg:max-w-[720px] bg-white",
+  };
 
   return createPortal(
     <div
-      className={`fixed p-5 inset-0 bg-black/50 flex ${positionClasses} z-50`}
+      className={`fixed inset-0 bg-black/50 ${positionClassesMap[position]} flex z-40`}
       onClick={closeModal}
     >
-      <div onClick={(e) => e.stopPropagation()}>{content}</div>
+      <div
+        className={`${settingsFormMap[position]}`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {content}
+      </div>
     </div>,
     document.body
   );
